@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aurorasuperbot/daimon-cards/schema/card.schema.json",
+  "title": "DAIMON Card",
+  "description": "A single card definition. Mechanical fields are engine-coupled; render fields are decorative only and are dropped at engine load time.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["card_id", "slot", "atk", "def", "hp", "spd", "triggers"],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "description": "Unique identifier within a pack. Engine treats this as opaque.",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "slot": {
+      "type": "string",
+      "enum": ["HEAD", "TORSO", "ARM_L", "ARM_R", "LEGS", "CORE"]
+    },
+    "atk":  { "type": "integer", "minimum": 0, "maximum": 999 },
+    "def":  { "type": "integer", "minimum": 0, "maximum": 999 },
+    "hp":   { "type": "integer", "minimum": 0, "maximum": 999 },
+    "spd":  { "type": "integer", "minimum": 0, "maximum": 999 },
+    "triggers": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["when", "op", "target", "value"],
+        "properties": {
+          "when":   { "enum": ["ON_BATTLE_START", "ON_ROUND_START", "ON_ATTACK", "ON_TAKE_DAMAGE", "ON_DEATH", "ON_ALLY_DEATH"] },
+          "op":     { "enum": ["BUFF_ATK", "DEBUFF_ATK", "BUFF_DEF", "DEBUFF_DEF", "HEAL", "DAMAGE", "ADD_SHIELD", "BUFF_SPD"] },
+          "target": { "enum": ["SELF", "ALL_ALLIES", "ALL_ENEMIES", "LOWEST_HP_ENEMY", "HIGHEST_HP_ENEMY", "RANDOM_ENEMY", "RANDOM_ALLY"] },
+          "value":  { "type": "integer", "minimum": -999, "maximum": 999 }
+        }
+      }
+    },
+
+    "name": {
+      "type": "string",
+      "description": "Render-only display name. Engine never reads this.",
+      "maxLength": 64
+    },
+    "flavor": {
+      "type": "string",
+      "description": "Render-only flavor text. Engine never reads this.",
+      "maxLength": 280
+    },
+    "rarity": {
+      "type": "string",
+      "enum": ["common", "uncommon", "rare", "epic", "legendary"]
+    },
+    "art": {
+      "type": "string",
+      "description": "Path or content-hash of card art. Render-only.",
+      "maxLength": 256
+    },
+    "_render_only": {
+      "type": "object",
+      "description": "Catch-all for additional render metadata. Never reaches engine.",
+      "additionalProperties": true
+    }
+  }
+}

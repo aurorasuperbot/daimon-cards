@@ -1,0 +1,5 @@
+# DAIMON cards repo — text-only, no LFS.
+# Binary art ships via GitHub Releases (see README + scripts/fetch_art.sh).
+*.json text eol=lf
+*.md   text eol=lf
+*.sh   text eol=lf

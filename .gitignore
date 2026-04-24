@@ -1,0 +1,13 @@
+.DS_Store
+*.swp
+__pycache__/
+.venv/
+build/
+dist/
+
+# Art binaries — distributed via GitHub Releases (art-vX.Y tags), not tracked here.
+# The dev VPS keeps raw PNGs on disk for FE serving + art-pack rebuilds.
+art/**/*.png
+art/**/*.webp
+art/**/*.jpg
+art/**/*.jpeg

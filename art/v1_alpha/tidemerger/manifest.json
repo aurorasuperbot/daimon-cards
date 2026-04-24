@@ -1,0 +1,15 @@
+{
+  "card_id": "tidemerger",
+  "canonical": "v0",
+  "variants": [
+    {
+      "id": "v0",
+      "seed": 0,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T05:15:32Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "miura_v1_silhouette_pass"
+    }
+  ]
+}
