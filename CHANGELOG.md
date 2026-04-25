@@ -4,12 +4,12 @@ All notable changes to DAIMON card definitions.
 
 ## [Unreleased]
 
-## [art-v1.0] — 2026-04-25
+## [art-v1.1] — 2026-04-25
 
 ### Added
 - First public art pack release. 200 cards × canonical (v0) variants + skin
   variants (v1, v2 where applicable, from the 2026-04-24 NovelAI art pass).
-- `art/v1_alpha/.version` set to `art-v1.0`.
+- `art/v1_alpha/.version` set to `art-v1.1`.
 - `art/v1_alpha/.checksum` records the sha256 of the released `v1_alpha.tar.gz`.
 - `art/variants_lib.py` — manifest read/write authority module (used by the
   art-pass script and the FE Cards-tab routes).
@@ -20,7 +20,9 @@ All notable changes to DAIMON card definitions.
 - Tarball: `v1_alpha.tar.gz` (~1.6 GB) attached to the GH Release.
 - Engine compat: requires `daimon-engine` with `COMPAT_ART_MAJOR == 1`.
 - Auto-fetched by `daimon match` / `daimon shop` on first run; pin via
-  `DAIMON_PIN_ART=art-v1.0` to lock.
+  `DAIMON_PIN_ART=art-v1.1` to lock.
+- art-v1.0 (908 MB, 200 cards × canonical only) remains available as the
+  prior release; v1.1 is a strict superset.
 
 ## [Initial layout]
 
