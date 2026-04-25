@@ -10,6 +10,34 @@
       "status": "active",
       "model": "nai-diffusion-4-5-full",
       "prompt_version": "miura_v1_silhouette_pass"
+    },
+    {
+      "id": "v1",
+      "seed": 4832999,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:08:34Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "runestone_frost",
+      "skin_name": "Runestone Frost",
+      "skin_axis": "cultural",
+      "rarity": "rare"
+    },
+    {
+      "id": "v2",
+      "seed": 4246343,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:08:37Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "stainedglass_icon",
+      "skin_name": "Stained-Glass Icon",
+      "skin_axis": "anatomical",
+      "rarity": "super_rare"
     }
   ]
 }

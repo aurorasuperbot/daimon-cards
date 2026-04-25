@@ -10,6 +10,34 @@
       "status": "active",
       "model": "nai-diffusion-4-5-full",
       "prompt_version": "miura_v1_silhouette_pass"
+    },
+    {
+      "id": "v1",
+      "seed": 4977061,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:07:36Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "hieroglyph_tomb",
+      "skin_name": "Hieroglyph Tomb",
+      "skin_axis": "cultural",
+      "rarity": "rare"
+    },
+    {
+      "id": "v2",
+      "seed": 4396816,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:07:40Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "bestiary_folio",
+      "skin_name": "Bestiary Folio",
+      "skin_axis": "anatomical",
+      "rarity": "super_rare"
     }
   ]
 }

@@ -19,6 +19,34 @@
       "status": "active",
       "model": "nai-diffusion-4-5-full",
       "prompt_version": "miura_v1"
+    },
+    {
+      "id": "v2",
+      "seed": 4885164,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:08:17Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "marble_pantheon",
+      "skin_name": "Marble Pantheon",
+      "skin_axis": "cultural",
+      "rarity": "rare"
+    },
+    {
+      "id": "v3",
+      "seed": 4946517,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:08:20Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "audubon_plate",
+      "skin_name": "Audubon Plate",
+      "skin_axis": "anatomical",
+      "rarity": "super_rare"
     }
   ]
 }

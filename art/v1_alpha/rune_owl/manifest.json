@@ -10,6 +10,34 @@
       "status": "active",
       "model": "nai-diffusion-4-5-full",
       "prompt_version": "miura_v1_silhouette_pass"
+    },
+    {
+      "id": "v1",
+      "seed": 4860852,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:21:17Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "heretic_manuscript",
+      "skin_name": "Heretic Manuscript",
+      "skin_axis": "cultural",
+      "rarity": "rare"
+    },
+    {
+      "id": "v2",
+      "seed": 4706241,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:21:19Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "audubon_plate",
+      "skin_name": "Audubon Plate",
+      "skin_axis": "anatomical",
+      "rarity": "super_rare"
     }
   ]
 }

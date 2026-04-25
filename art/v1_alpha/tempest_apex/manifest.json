@@ -19,6 +19,34 @@
       "status": "active",
       "model": "nai-diffusion-4-5-full",
       "prompt_version": "miura_v1"
+    },
+    {
+      "id": "v2",
+      "seed": 4607004,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:25:29Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "runestone_frost",
+      "skin_name": "Runestone Frost",
+      "skin_axis": "cultural",
+      "rarity": "rare"
+    },
+    {
+      "id": "v3",
+      "seed": 4377897,
+      "seed_offset": 0,
+      "created_at": "2026-04-24T20:25:33Z",
+      "status": "active",
+      "model": "nai-diffusion-4-5-full",
+      "prompt_version": "skin_v1_2axis",
+      "kind": "skin",
+      "skin_slug": "bestiary_folio",
+      "skin_name": "Bestiary Folio",
+      "skin_axis": "anatomical",
+      "rarity": "super_rare"
     }
   ]
 }
