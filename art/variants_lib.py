@@ -63,12 +63,21 @@ from typing import Any, Optional
 # ---- canonical paths --------------------------------------------------------
 
 CARDS_REPO_ART = Path(
-    "/opt/agents/projects/nullpoint-workspace/nullpoint-cards/art/v1_alpha"
+    "/opt/agents/projects/daimon-cards/art/v1_alpha"
 )
 PREVIEW_DIR = Path("/opt/leeroy-web/uploads/cards")
 
-CARDS_REPO_ART.mkdir(parents=True, exist_ok=True)
-PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
+_DIRS_INITIALIZED = False
+
+
+def _ensure_dirs() -> None:
+    """Create top-level directories on first use, not at import time."""
+    global _DIRS_INITIALIZED
+    if _DIRS_INITIALIZED:
+        return
+    CARDS_REPO_ART.mkdir(parents=True, exist_ok=True)
+    PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
+    _DIRS_INITIALIZED = True
 
 # ---- per-card locks ---------------------------------------------------------
 
@@ -124,6 +133,7 @@ def _empty_manifest(card_id: str) -> dict[str, Any]:
 
 def load_manifest(card_id: str) -> dict[str, Any]:
     """Load (or synthesise) the manifest for a card. Never mutates disk."""
+    _ensure_dirs()
     p = manifest_path(card_id)
     if not p.exists():
         return _empty_manifest(card_id)
@@ -136,6 +146,7 @@ def load_manifest(card_id: str) -> dict[str, Any]:
 
 def save_manifest(card_id: str, manifest: dict[str, Any]) -> None:
     """Atomically replace manifest.json. Caller must hold _lock_for(card_id)."""
+    _ensure_dirs()
     p = manifest_path(card_id)
     p.parent.mkdir(parents=True, exist_ok=True)
     tmp = p.with_suffix(".json.tmp")

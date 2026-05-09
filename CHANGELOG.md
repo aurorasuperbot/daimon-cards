@@ -36,12 +36,12 @@ All notable changes to DAIMON card definitions.
   - `starter_runner_legs`
   - `starter_steady_core`
 - `packs/legendary/plasma_lance.json` — V1 reference legendary card.
-- Initial `art/` directory layout (Git LFS).
+- Initial `art/` directory layout (text-only metadata; art binaries ship via GitHub Releases).
 
 ## Versioning
 
-Card packs use semver tags published as OCI artifacts:
-`ghcr.io/aurorasuperbot/daimon-cardpacks:starter-v1.0.0`
+Card packs use semver tags published as GitHub Releases with `art-v*` tags:
+`https://github.com/aurorasuperbot/daimon-cards/releases/tag/art-v1.0`
 
 - MAJOR: stat changes that invalidate prior loadouts (rare, requires deprecation cycle).
 - MINOR: new cards added.

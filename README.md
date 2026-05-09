@@ -32,7 +32,7 @@ Subsequent invocations check for newer `art-v*` releases (rate-limited, 24h) and
 - CODEOWNERS gates the entire repo.
 - A card change requires a CHANGELOG entry in the same PR.
 - Stat changes require an explanation: what build was unbalanced, what data justifies the change.
-- Re-rolled art requires a new `art-vX.Y` release (build via `scripts/release_art.sh`).
+- Re-rolled art requires a new `art-vX.Y` release (build via `scripts/build_art_manifest.py`).
 
 ## Why a separate repo from the engine
 

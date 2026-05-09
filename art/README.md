@@ -10,36 +10,35 @@ Card-art binaries (PNGs) **do not live in this repo**. They ship via [GitHub Rel
 
 ## How the engine fetches art
 
-The `daimon` engine auto-fetches the matching art-pack on first run and on subsequent updates:
+The `daimon` engine uses a lazy per-card fetch model. On first run it downloads the small manifest (~50KB) and then fetches individual card tarballs on demand as each card first needs to render:
 
 ```
 $ daimon match
-daimon: fetching art-v1.0 (908 MB) ... [████████████] 100%
-daimon: extracted to ~/.daimon/art/v1_alpha/
+daimon: fetching manifest for art-v1.1 ... done (50 KB)
+daimon: fetching starter cards (6 of 200) ... [████████████] 100%
 [match starts]
 ```
 
-After the initial fetch, every `daimon` invocation does a rate-limited (24h) check for newer `art-v*` releases. If newer, the engine downloads and atomically swaps in the background — the next invocation sees the update.
+After the initial manifest fetch, every `daimon` invocation does a rate-limited (24h) check for newer `art-v*` releases. If a newer manifest is found, updated per-card tarballs are downloaded in the background — only cards whose sha256 changed are re-fetched.
 
 See [`daimon/update.py`](https://github.com/aurorasuperbot/daimon/blob/main/daimon/update.py) for the implementation.
 
 ## Manual fetch
 
-If you'd rather fetch the art-pack yourself (e.g. CI cache, offline install):
+If you'd rather fetch art yourself (e.g. CI cache, offline install):
 
 ```bash
-# Latest
-gh release download --repo aurorasuperbot/daimon-cards --pattern 'v1_alpha.tar.gz' \
+# Download manifest + all per-card tarballs for a specific version
+gh release download art-v1.1 --repo aurorasuperbot/daimon-cards \
   --dir ~/.daimon/art-staging/
 
-# Specific version
-gh release download art-v1.0 --repo aurorasuperbot/daimon-cards \
-  --pattern 'v1_alpha.tar.gz' --dir ~/.daimon/art-staging/
-
-# Verify + extract
+# Verify manifest
 cd ~/.daimon/art-staging
-sha256sum -c <(echo "$(cat ~/.daimon/art/v1_alpha/.checksum)")
-tar xzf v1_alpha.tar.gz -C ~/.daimon/
+sha256sum -c manifest.json.sha256
+
+# Verify + extract individual cards
+sha256sum -c card_abyss_warden.tar.gz.sha256
+tar xzf card_abyss_warden.tar.gz -C ~/.daimon/art/v1_alpha/abyss_warden/
 ```
 
 ## Layout after extraction
